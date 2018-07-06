@@ -1,3 +1,3 @@
-# messenger 2.0
+# messenger frontend
 
-messenger 2.0
+messenger frontend
