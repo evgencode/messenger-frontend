@@ -6,7 +6,24 @@
   "repository": "https://github.com/evgencode/messenger.git",
   "author": "e.petrov <evgeny.petrov@zedconnect.com>",
   "license": "MIT",
+  "scripts": {
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production",
+    "lint-js": "eslint ."
+  },
   "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "prettier": "^1.13.7",
     "webpack": "4.15.1",
     "webpack-cli": "3.0.8"
   },
