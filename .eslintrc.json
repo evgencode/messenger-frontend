@@ -8,23 +8,29 @@
       "jsx": true
     }
   },
+  "root": true,
   "extends": [
-    "standard",
-    "standard-react",
     "prettier",
     "prettier/standard",
     "prettier/react"
   ],
   "plugins": [
-    "standard",
     "prettier"
   ],
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "worker": true
   },
   "rules": {
-    "prettier/prettier": [2, {"trailingComma": "es5", "singleQuote": true, "semi": false}],
-    "react/no-unused-prop-types": "off"
+    "prettier/prettier": [2, {"singleQuote": true, "semi": false}],
+    "overrides": [
+      {
+        "files": ["*.test.js", "*.spec.js"],
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ]
   }
 }

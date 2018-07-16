@@ -1,6 +1,99 @@
 /* global module */
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const webpack = require('webpack')
+
+const ENVIRONMENT = process.argv[3] || 'development'
+const OPTIMIZE = ENVIRONMENT !== 'development'
+const PUBLIC_DIR = path.resolve(__dirname, 'public')
+const SRC_DIR = path.resolve(__dirname, 'app')
+
+const plugins = [
+  new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /(en-gb|ru)\.js/),
+  new HtmlWebpackPlugin({
+    filename: path.join(PUBLIC_DIR, 'index.html'),
+    template: path.join(SRC_DIR, 'index.html'),
+    inject: false
+  }),
+  new MiniCssExtractPlugin({
+    filename: '[name].css'
+  })
+]
+if (OPTIMIZE) {
+  plugins.push(new CleanWebpackPlugin(['public']))
+}
+
+const loaders = [
+  {
+    test: /.jsx?$/,
+    include: SRC_DIR,
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['babel-preset-react'],
+          plugins: [
+            'transform-class-properties',
+            'transform-object-rest-spread'
+          ]
+        }
+      }
+    ]
+  },
+  {
+    test: /\.css$/,
+    use: [MiniCssExtractPlugin.loader, 'css-loader']
+  }
+]
+
+const getExtraOptions = () =>
+  OPTIMIZE
+    ? {}
+    : {
+        watch: true,
+        watchOptions: {
+          aggregateTimeout: 300,
+          poll: 1000,
+          ignored: ['app/dist/**', 'node_modules/**']
+        },
+        devtool: 'source-map'
+      }
+
 module.exports = {
   entry: {
-    ddd: 11,
+    index: ['./app/index.js']
   },
+  output: {
+    path: path.join(PUBLIC_DIR, 'dist/'),
+    filename: `[name]${OPTIMIZE ? '.[hash:6]' : ''}.js`,
+    publicPath: '/dist/'
+  },
+  resolve: {
+    extensions: ['.js', 'jsx', '.json']
+  },
+  module: {
+    rules: loaders
+  },
+  plugins: plugins,
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          chunks: 'initial',
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          enforce: true
+        },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
+  ...getExtraOptions()
 }
