@@ -1,26 +1,10 @@
-console.log('ENTRY')
-import React, { Component } from 'react'
-import _ from 'lodash'
+import React from 'react'
+import { render } from 'react-dom'
+import { store } from '@store'
 import './index.css'
 
-import test from './components/test'
-test()
-console.log('BBB_511', React)
+console.log(store.getState())
 
-const greveal = { a: 1002 }
-const state = { b: 8526, ...greveal }
+const App = props => <div className="app">Messenger App</div>
 
-const Simple = props => <div>{props.name}</div>
-
-class Comp extends Component {
-  render() {
-    return (
-      <div>
-        <Simple hasCar {...this.props} />
-        <p>{this.children}</p>
-      </div>
-    )
-  }
-}
-
-const App = props => <Comp name="Hello">Other Text</Comp>
+render(<App />, document.getElementById('root'))
