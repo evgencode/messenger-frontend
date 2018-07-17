@@ -1,8 +1,9 @@
 console.log('ENTRY')
 import React, { Component } from 'react'
 import _ from 'lodash'
-import test from './components/test'
 import './index.css'
+
+import test from './components/test'
 test()
 console.log('BBB_511', React)
 

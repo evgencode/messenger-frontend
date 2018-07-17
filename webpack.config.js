@@ -18,7 +18,8 @@ const plugins = [
     inject: false
   }),
   new MiniCssExtractPlugin({
-    filename: '[name].css'
+    filename: '[name].css',
+    chunkFilename: '[id].css'
   })
 ]
 if (OPTIMIZE) {
@@ -45,6 +46,13 @@ const loaders = [
   {
     test: /\.css$/,
     use: [MiniCssExtractPlugin.loader, 'css-loader']
+  },
+  {
+    test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf)$/,
+    loader: 'file-loader',
+    options: {
+      name: '[name].[md5:hash:hex:6].[ext]'
+    }
   }
 ]
 
@@ -80,16 +88,16 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
+        styles: {
+          chunks: 'all',
+          name: 'styles',
+          test: /\.css$/,
+          enforce: true
+        },
         vendors: {
           chunks: 'initial',
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
-          enforce: true
-        },
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
           enforce: true
         }
       }

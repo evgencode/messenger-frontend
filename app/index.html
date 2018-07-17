@@ -7,11 +7,12 @@
   <meta itemprop="description" content="">
   <meta name="keywords" content="">
   <title>Messenger</title>
+  <% htmlWebpackPlugin.files.css.forEach(function(style) { %><link href="<%=style%>" rel="stylesheet">
+  <% }); %>
 </head>
 <body>
 <div id="app"></div>
-<link href="<%=htmlWebpackPlugin.files.css %>" rel="stylesheet">
-<script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[0]%>"></script>
-<script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[1]%>"></script>
+<% htmlWebpackPlugin.files.js.forEach(function(js) { %><script type="text/javascript" src="<%=js%>"></script>
+<% }); %>
 </body>
 </html>
