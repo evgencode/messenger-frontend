@@ -1,10 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { store } from '@store'
-import './index.css'
+import Root from '@components/main/Root'
+import './styles/index.scss'
 
-console.log(store.getState())
-
-const App = props => <div className="app">Messenger App</div>
-
-render(<App />, document.getElementById('root'))
+render(<Root />, document.getElementById('root'))

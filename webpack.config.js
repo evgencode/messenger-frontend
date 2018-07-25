@@ -44,8 +44,8 @@ const loaders = [
     ]
   },
   {
-    test: /\.css$/,
-    use: [MiniCssExtractPlugin.loader, 'css-loader']
+    test: /\.s?css$/,
+    use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
   },
   {
     test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf)$/,

@@ -1,0 +1,25 @@
+@import 'variables/index';
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  height: 100%;
+}
+
+body {
+  background-color: $bg-color;
+  margin: 0;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+#root {
+
+}
+
+#app {
+
+}
