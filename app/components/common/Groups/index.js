@@ -12,13 +12,12 @@ const Groups = () => {
           <div className="title-a">Группы</div>
         </Toolbar>
       </AppBar>
-      <p>ffff</p>
-      <p>ffff</p>
-      <p>ffff</p>
-      <p>ffff</p>
-      <p>ffff</p>
-      <p>ffff</p>
-      <p>ffff</p>
+      <div className="scrollable">
+        <p>1 Group</p>
+        <p>2 Group</p>
+        <p>3 Group</p>
+        <p>4 Group</p>
+      </div>
     </section>
   )
 }

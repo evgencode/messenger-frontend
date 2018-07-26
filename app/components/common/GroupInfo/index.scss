@@ -1,0 +1,36 @@
+.group {
+  overflow: hidden;
+  @media screen and(min-width: 960px) {
+    max-width: 30%;
+  }
+}
+.group__header {
+  @media screen and(min-width: 960px) {
+    border-left: 1px solid #ffffff;
+  }
+}
+.group-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.group__block {
+  margin: 12px 3%;
+}
+
+.group__ava {
+  width: 60%;
+  height: 60%;
+  margin: 0 auto;
+  @media screen and(min-width: 600px) {
+    width: 45%;
+    height: 45%;
+  }
+}
+
+.group__name {
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  color: inherit;
+}
