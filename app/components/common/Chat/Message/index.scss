@@ -1,0 +1,9 @@
+@import '~@styles/variables/index.scss';
+
+.message {
+  padding: 10px;
+  max-width: 95%;
+  @media screen and(min-width: $md){
+    max-width: 65%;
+  }
+}

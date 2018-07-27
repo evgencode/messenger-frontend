@@ -1,3 +1,13 @@
-.groups {
+@import '~@styles/variables/index.scss';
 
+.groups {
+  @media screen and(min-width: $md) {
+    max-width: 25%;
+  }
+}
+.groups__list-item-link {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 48px);
+  left: 0;
 }

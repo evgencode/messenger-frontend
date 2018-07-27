@@ -1,4 +1,4 @@
-@import 'variables/index';
+@import 'variables/index.scss';
 
 html {
   box-sizing: border-box;
@@ -16,8 +16,95 @@ body {
   box-sizing: inherit;
 }
 
-#root,
-.app {
+#root {
   height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
 }
 
+.app {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  @media screen and (min-width: $md) {
+    padding: 24px 12px 24px 12px;
+  }
+}
+
+.flex-column {
+  display: flex;
+  width: 100%;
+}
+
+.flex-row {
+  flex: 1;
+}
+
+.column-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-box_full {
+  height: 100%;
+  width: 100%;
+}
+
+.title-a {
+  color: $white;
+  font-size: 1.2em;
+}
+
+.scrollable {
+  height: calc(100% - #{$header-mobile-height});
+  @media screen and(min-width: $sm){
+    height: calc(100% - #{$header-desktop-height});
+  }
+}
+
+.top-divider {
+  flex: 1 1 auto;
+  min-height: 12px;
+}
+
+.block {
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_center {
+  margin: auto;
+}
+
+.form {
+
+}
+
+.form__buttons {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.form__field {
+
+}
+
+.button {
+
+}
+
+.button_center {
+  margin: auto;
+}
+
+.error {
+  color: $error-color;
+}
