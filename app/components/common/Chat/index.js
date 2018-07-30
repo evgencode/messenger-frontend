@@ -10,7 +10,7 @@ import Message from './Message'
 
 const Chat = () => {
   return (
-    <section className="chat flex-row">
+    <section className="chat">
       {/*<Loader />*/}
       <div className="column-box column-box_full">
         <AppBar position="static" className="header chat__header">

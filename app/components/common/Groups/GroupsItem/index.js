@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
 import ListItem from '@material-ui/core/ListItem'
@@ -47,6 +47,17 @@ const styles = theme => {
   }
 }
 
+const tmpLinks = [
+  '',
+  'fgn54yu',
+  '',
+  'uut789jk8',
+  '',
+  'nm7423ghuj',
+  '',
+  '654ty562rw'
+]
+
 class GroupsListItem extends Component {
   render() {
     const { item } = this.props
@@ -55,10 +66,7 @@ class GroupsListItem extends Component {
 
     return (
       <ListItem divider component="li" className="list__item groups__list-item">
-        {/*<Link*/}
-        {/*to={item.link || '/group-info'}*/}
-        {/*className="groups__list-item-link"*/}
-        {/*/>*/}
+        <Link to={this.props.link || '/'} className="groups__list-item-link" />
         {item._new ? (
           <Badge
             badgeContent={item._new}

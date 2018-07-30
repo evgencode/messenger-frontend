@@ -1,14 +1,17 @@
+@import '~@styles/variables/index.scss';
+
 .group {
   overflow: hidden;
-  @media screen and(min-width: 960px) {
-    max-width: 30%;
+  flex: 1 1 100%;
+  @media screen and(min-width: $lg) {
+    flex: 0 0 30%
   }
 }
+
 .group__header {
-  @media screen and(min-width: 960px) {
-    border-left: 1px solid #ffffff;
-  }
+  border-left: 1px solid $header-border-color;
 }
+
 .group-info {
   flex: 1;
   overflow: hidden;
@@ -22,7 +25,7 @@
   width: 60%;
   height: 60%;
   margin: 0 auto;
-  @media screen and(min-width: 600px) {
+  @media screen and(min-width: $sm) {
     width: 45%;
     height: 45%;
   }

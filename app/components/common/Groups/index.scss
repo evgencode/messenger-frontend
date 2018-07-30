@@ -1,8 +1,15 @@
 @import '~@styles/variables/index.scss';
 
 .groups {
-  @media screen and(min-width: $md) {
-    max-width: 25%;
+  flex: 1 1 100%;
+  @media screen and(min-width: $lg) {
+    flex: 0 0 25%;
+  }
+  @media screen and(min-width: $md) and (max-width: $lg) {
+    flex: 0 0 30%;
+  }
+  @media screen and(min-width: $sm) and (max-width: $md) {
+    flex: 0 0 40%;
   }
 }
 .groups__list-item-link {
