@@ -21,11 +21,11 @@ const Groups = () => {
           <List disablePadding className="list groups__list">
             {/*{groupsItems.map((item, i) => <GroupsItem key={i} item={item} lk={i} />)}*/}
             <GroupsItem item={groupsItems[0]} link={'/'} />
-            <GroupsItem item={groupsItems[1]} link={'/info/uuid'} />
-            <GroupsItem item={groupsItems[2]} link={'/info/uuid'} />
+            <GroupsItem item={groupsItems[1]} link={'/chat/uuid/info'} />
+            <GroupsItem item={groupsItems[2]} link={'/chat/uuid'} />
             <GroupsItem item={groupsItems[3]} link={'/'} />
-            <GroupsItem item={groupsItems[4]} link={'/info/uuid'} />
-            <GroupsItem item={groupsItems[5]} link={'/info/uuid'} />
+            <GroupsItem item={groupsItems[4]} link={'/chat/uuid/info'} />
+            <GroupsItem item={groupsItems[5]} link={'/chat/uuid'} />
           </List>
         </Scrollbars>
       </div>
