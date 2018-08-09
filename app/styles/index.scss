@@ -104,3 +104,10 @@ body {
 .error {
   color: $error-color;
 }
+
+
+.nowrap-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

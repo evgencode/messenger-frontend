@@ -4,7 +4,7 @@ export default [
     secondary: 'последнее сообщение в группе',
     link: 'group-info',
     date: 'Вчера',
-    _new: 2
+    newMessages: 2
   },
   {
     primary: 'Обсуждаем обсуждение',
@@ -18,14 +18,14 @@ export default [
       'это какое-то длинное сообщение и оно  которое не умещается в одну строчку',
     link: 'group-info',
     date: '12:40',
-    _new: 12
+    newMessages: 12
   },
   {
     primary: 'Дизайн для чата',
     secondary: 'Дай взаймы 9000 до завтра',
     link: 'chat',
     date: '02.04.18',
-    _new: 3
+    newMessages: 3
   },
   {
     primary: 'Селеверстр игнатич',

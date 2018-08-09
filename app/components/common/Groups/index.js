@@ -1,12 +1,9 @@
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import List from '@material-ui/core/List'
 import React from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
-import GroupsItem from './GroupsItem'
+import GroupsList from './GroupsList'
 import './index.scss'
-
-import { groupsItems } from '../../../mock_data'
 
 const Groups = () => {
   return (
@@ -18,15 +15,7 @@ const Groups = () => {
       </AppBar>
       <div className="scrollable">
         <Scrollbars>
-          <List disablePadding className="list groups__list">
-            {/*{groupsItems.map((item, i) => <GroupsItem key={i} item={item} lk={i} />)}*/}
-            <GroupsItem item={groupsItems[0]} link={'/'} />
-            <GroupsItem item={groupsItems[1]} link={'/chat/uuid/info'} />
-            <GroupsItem item={groupsItems[2]} link={'/chat/uuid'} />
-            <GroupsItem item={groupsItems[3]} link={'/'} />
-            <GroupsItem item={groupsItems[4]} link={'/chat/uuid/info'} />
-            <GroupsItem item={groupsItems[5]} link={'/chat/uuid'} />
-          </List>
+          <GroupsList />
         </Scrollbars>
       </div>
     </section>
