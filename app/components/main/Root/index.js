@@ -1,26 +1,29 @@
-import Hidden from '@material-ui/core/Hidden'
+import { ConnectedRouter } from 'connected-react-router'
 import React from 'react'
-import { MuiThemeProvider } from '@material-ui/core/styles'
 import { Provider } from 'react-redux'
-import { store } from '@store/index'
-
+import Hidden from '@material-ui/core/Hidden'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import DesktopApp from '@components/main/DesktopApp'
 import MobileApp from '@components/main/MobileApp'
 import theme from '@components/theme'
+import history from '@store/history'
+import store from '@store'
 
 const Root = () => {
   return (
     <Provider store={store}>
-      <div className="app">
-        <MuiThemeProvider theme={theme}>
-          <Hidden smUp>
-            <MobileApp />
-          </Hidden>
-          <Hidden xsDown>
-            <DesktopApp />
-          </Hidden>
-        </MuiThemeProvider>
-      </div>
+      <ConnectedRouter history={history}>
+        <div className="app">
+          <MuiThemeProvider theme={theme}>
+            <Hidden smUp>
+              <MobileApp />
+            </Hidden>
+            <Hidden xsDown>
+              <DesktopApp />
+            </Hidden>
+          </MuiThemeProvider>
+        </div>
+      </ConnectedRouter>
     </Provider>
   )
 }

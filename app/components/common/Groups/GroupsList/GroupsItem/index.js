@@ -1,26 +1,27 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import { push } from 'connected-react-router'
+import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import Avatar from '@material-ui/core/Avatar'
+import Badge from '@material-ui/core/Badge'
+import GroupIcon from '@material-ui/icons/Group'
+import IconButton from '@material-ui/core/IconButton'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
-import Avatar from '@material-ui/core/Avatar'
-import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import Badge from '@material-ui/core/Badge'
-import GroupIcon from '@material-ui/icons/Group'
-import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import './index.scss'
 
-const GroupsItem = ({ item, link }) => {
+const GroupsItem = ({ uuid, link, date, newMessages, name, label }) => {
   return (
-    <ListItem
-      button
-      onClick={() => {
-        console.log('ListItem', link)
-        push(link)
-      }}
-    >
-      {item.newMessages ? (
+    <ListItem button>
+      <Typography
+        variant="caption"
+        color="textSecondary"
+        classes={{ caption: 'groups-item__date' }}
+      >
+        {date}
+      </Typography>
+      {newMessages ? (
         <Badge
           badgeContent={10}
           color="secondary"
@@ -36,8 +37,8 @@ const GroupsItem = ({ item, link }) => {
         </Avatar>
       )}
       <ListItemText
-        primary={item.primary}
-        secondary={item.secondary}
+        primary={name}
+        secondary={label}
         classes={{
           primary: 'nowrap-hidden',
           secondary: 'nowrap-hidden'
@@ -52,48 +53,13 @@ const GroupsItem = ({ item, link }) => {
   )
 }
 
-export default GroupsItem
+GroupsItem.propTypes = {
+  uuid: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  newMessages: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
+}
 
-// return (
-//   <ListItem divider button component="li" className="list__item groups-item">
-//     {/*<Link to={link || '/'} className="groups__list-item-link" />*/}
-//     {item._new ? (
-//       <Badge
-//         badgeContent={item._new}
-//         color="secondary"
-//         classes={{ badge: badge }}
-//       >
-//         <Avatar>
-//           <GroupIcon />
-//         </Avatar>
-//       </Badge>
-//     ) : (
-//       <Avatar>
-//         <GroupIcon />
-//       </Avatar>
-//     )}
-//     <ListItemText
-//       primary={item.primary}
-//       secondary={item.secondary}
-//       classes={{ primary: linearText, secondary: linearText }}
-//     />
-//     <ListItemSecondaryAction
-//       className="groups-item__action"
-//       onClick={e => {
-//         console.log('ListItemSecondaryAction', e)
-//       }}
-//     >
-//       <Checkbox />
-//       {/*<IconButton>*/}
-//       {/*<ArrowDown className="groups-item__action-icon" />*/}
-//       {/*</IconButton>*/}
-//     </ListItemSecondaryAction>
-//     <Typography
-//       variant="caption"
-//       color="textSecondary"
-//       className="groups-item__date"
-//     >
-//       {item.date}
-//     </Typography>
-//   </ListItem>
-// )
+export default GroupsItem

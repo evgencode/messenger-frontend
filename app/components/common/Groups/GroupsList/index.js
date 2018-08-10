@@ -8,12 +8,17 @@ class GroupsList extends Component {
   render() {
     return (
       <List disablePadding className="list groups-list">
-        <GroupsItem item={groupsItems[0]} link={'/'} newMessages={6} />
-        <GroupsItem item={groupsItems[1]} link={'/chat/uuid/info'} />
-        <GroupsItem item={groupsItems[2]} link={'/chat/uuid'} />
-        <GroupsItem item={groupsItems[3]} link={'/'} newMessages={22} />
-        <GroupsItem item={groupsItems[4]} link={'/chat/uuid/info'} />
-        <GroupsItem item={groupsItems[5]} link={'/chat/uuid'} />
+        {groupsItems.map(({ uuid, link, date, newMessages, name, label }) => (
+          <GroupsItem
+            key={uuid}
+            uuid={uuid}
+            link={link}
+            date={date}
+            newMessages={newMessages}
+            name={name}
+            label={label}
+          />
+        ))}
       </List>
     )
   }

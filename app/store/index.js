@@ -1,3 +1,5 @@
 import builder from './builder'
 
-export const store = builder()
+const store = builder()
+
+export default store
