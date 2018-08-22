@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import './index.scss'
 
-const Index = props => {
+const Loader = props => {
   return (
     <div className={classNames(['loader', { loader_opaque: props.opaque }])} style={props.style}>
       <CircularProgress className={classNames(['loader-spin'])} thickness={4} size={props.size} />
@@ -13,16 +13,16 @@ const Index = props => {
   )
 }
 
-Index.propTypes = {
+Loader.propTypes = {
   style: PropTypes.object,
   size: PropTypes.oneOf([32, 64, 128]),
   opaque: PropTypes.bool
 }
 
-Index.defaultProps = {
+Loader.defaultProps = {
   style: {},
   size: 32,
   opaque: false
 }
 
-export default Index
+export default Loader
