@@ -41,11 +41,7 @@ const routes = [
   }
 ]
 
-export const routesById = _.reduce(
-  routes,
-  (routes, { id, ...route }) => ({ ...routes, [id]: route }),
-  {}
-)
+export const routesById = _.reduce(routes, (routes, { id, ...route }) => ({ ...routes, [id]: route }), {})
 
 export const MobileAppRouter = () => (
   <Switch>

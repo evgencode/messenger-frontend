@@ -11,22 +11,14 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import Typography from '@material-ui/core/Typography'
 import './index.scss'
 
-const GroupsItem = ({ uuid, link, date, newMessages, name, label }) => {
+const GroupsItem = ({ uuid, link, date, newMessages, name, label, onClick }) => {
   return (
-    <ListItem button>
-      <Typography
-        variant="caption"
-        color="textSecondary"
-        classes={{ caption: 'groups-item__date' }}
-      >
+    <ListItem button onClick={() => onClick(uuid, link)}>
+      <Typography variant="caption" color="textSecondary" classes={{ caption: 'groups-item__date' }}>
         {date}
       </Typography>
       {newMessages ? (
-        <Badge
-          badgeContent={10}
-          color="secondary"
-          classes={{ badge: 'groups-item__badge' }}
-        >
+        <Badge badgeContent={10} color="secondary" classes={{ badge: 'groups-item__badge' }}>
           <Avatar classes={{ root: 'groups-item__avatar' }}>
             <GroupIcon />
           </Avatar>
@@ -59,7 +51,8 @@ GroupsItem.propTypes = {
   date: PropTypes.string.isRequired,
   newMessages: PropTypes.number,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default GroupsItem

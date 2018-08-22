@@ -6,11 +6,9 @@ import './index.scss'
 
 const MobileApp = () => {
   return (
-    <Router>
-      <div className="mobile-app">
-        <MobileAppRouter />
-      </div>
-    </Router>
+    <div className="mobile-app">
+      <MobileAppRouter />
+    </div>
   )
 }
 

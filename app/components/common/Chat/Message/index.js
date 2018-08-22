@@ -23,14 +23,9 @@ const Message = props => {
 
   return (
     <div className="chat__list-item list__item">
-      <Paper
-        elevation={1}
-        classes={{ root: out ? messageOut : messageIn }}
-        className="message"
-      >
-        One of its primary use cases is to make dynamic and conditional
-        className props simpler to work with. So where you may have the
-        following code to generate a className prop for a in React
+      <Paper elevation={1} classes={{ root: out ? messageOut : messageIn }} className="message">
+        One of its primary use cases is to make dynamic and conditional className props simpler to work with. So where
+        you may have the following code to generate a className prop for a in React
       </Paper>
     </div>
   )

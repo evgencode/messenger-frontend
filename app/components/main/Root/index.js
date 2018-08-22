@@ -13,16 +13,16 @@ const Root = () => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div className="app">
-          <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
+          <div className="app">
             <Hidden smUp>
               <MobileApp />
             </Hidden>
             <Hidden xsDown>
               <DesktopApp />
             </Hidden>
-          </MuiThemeProvider>
-        </div>
+          </div>
+        </MuiThemeProvider>
       </ConnectedRouter>
     </Provider>
   )

@@ -1,8 +1,9 @@
 @import '~@styles/variables/index.scss';
 
 .group {
-  overflow: hidden;
   flex: 1 1 100%;
+  overflow: hidden;
+  position: relative;
   @media screen and(min-width: $lg) {
     flex: 0 0 30%
   }
@@ -22,13 +23,9 @@
 }
 
 .group__ava {
-  width: 60%;
-  height: 60%;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
-  @media screen and(min-width: $sm) {
-    width: 45%;
-    height: 45%;
-  }
 }
 
 .group__name {

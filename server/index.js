@@ -19,13 +19,7 @@ const server = http
             let file = path.resolve(__dirname, '..' + request.url)
 
             if (_req.dir === staticFolder && fs.existsSync(file)) {
-              fileServer.serveFile(
-                '../' + request.url,
-                200,
-                {},
-                request,
-                response
-              )
+              fileServer.serveFile('../' + request.url, 200, {}, request, response)
             } else {
               fileServer.serveFile('/index.html', 404, {}, request, response)
             }

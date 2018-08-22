@@ -7,15 +7,8 @@ import './index.scss'
 
 const Index = props => {
   return (
-    <div
-      className={classNames(['loader', { loader_opaque: props.opaque }])}
-      style={props.style}
-    >
-      <CircularProgress
-        className={classNames(['loader-spin'])}
-        thickness={4}
-        size={props.size}
-      />
+    <div className={classNames(['loader', { loader_opaque: props.opaque }])} style={props.style}>
+      <CircularProgress className={classNames(['loader-spin'])} thickness={4} size={props.size} />
     </div>
   )
 }

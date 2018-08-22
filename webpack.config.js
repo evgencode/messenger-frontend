@@ -35,10 +35,7 @@ const loaders = [
         loader: 'babel-loader',
         options: {
           presets: ['babel-preset-react'],
-          plugins: [
-            'transform-class-properties',
-            'transform-object-rest-spread'
-          ]
+          plugins: ['transform-class-properties', 'transform-object-rest-spread']
         }
       }
     ]
@@ -62,8 +59,6 @@ const getExtraOptions = () =>
     : {
         watch: true,
         watchOptions: {
-          aggregateTimeout: 300,
-          poll: 1000,
           ignored: ['app/dist/**', 'node_modules/**']
         },
         devtool: 'source-map'

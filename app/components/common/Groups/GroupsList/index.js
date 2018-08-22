@@ -5,6 +5,10 @@ import GroupsItem from './GroupsItem'
 import { groupsItems } from '../../../../mock_data'
 
 class GroupsList extends Component {
+  groupClick = (uuid, link) => {
+    this.props.navigateTo(link)
+  }
+
   render() {
     return (
       <List disablePadding className="list groups-list">
@@ -17,6 +21,7 @@ class GroupsList extends Component {
             newMessages={newMessages}
             name={name}
             label={label}
+            onClick={this.groupClick}
           />
         ))}
       </List>
