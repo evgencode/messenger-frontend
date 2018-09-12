@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Chat from '@components/common/Chat'
 import IntroPage from '@components/common/IntroPage'
+import Community from '@components/common/Community'
 import Groups from '@components/common/Groups'
 import GroupInfo from '@components/common/GroupInfo'
 
@@ -22,6 +23,14 @@ const routes = [
     mobile: { active: true, exact: true },
     lgUp: { active: false },
     lgDown: { active: false }
+  },
+  {
+    id: 'Community',
+    path: '/community',
+    component: Community,
+    mobile: { active: true, exact: true },
+    lgUp: { active: true },
+    lgDown: { active: true, exact: true }
   },
   {
     id: 'Chat',

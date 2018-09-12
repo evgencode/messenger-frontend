@@ -26,7 +26,7 @@ export default [
     uuid: 'a1b4k',
     name: 'Дизайн для чата',
     label: 'Дай взаймы 9000 до завтра',
-    link: '/',
+    link: '/community',
     date: '02.04.18',
     newMessages: 3
   },

@@ -1,35 +1,38 @@
-const Static = require('node-static')
-const http = require('http')
+const express = require('express')
 const path = require('path')
-const fs = require('fs')
-
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 const config = require('./config')
+const { notFound, error500 } = require('./middlewares')
 
-const staticFolder = '/static'
+const app = express()
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+
+const staticDir = path.resolve(__dirname, '../static')
+const imageDir = path.resolve(__dirname, '../images')
 const publicDir = path.resolve(__dirname, '../public')
-const fileServer = new Static.Server(publicDir, { cache: config.cache })
 
-const server = http
-  .createServer(function(request, response) {
-    request
-      .addListener('end', function() {
-        fileServer.serve(request, response, function(err, res) {
-          if (err && err.status === 404) {
-            let _req = path.parse(request.url)
-            let file = path.resolve(__dirname, '..' + request.url)
+/**
+ * Static folders
+ */
+app.use(`/images`, express.static(imageDir))
+app.use(`/static`, express.static(staticDir))
 
-            if (_req.dir === staticFolder && fs.existsSync(file)) {
-              fileServer.serveFile('../' + request.url, 200, {}, request, response)
-            } else {
-              fileServer.serveFile('/index.html', 404, {}, request, response)
-            }
-          }
-        })
-      })
-      .resume()
-  })
-  .listen(config.port, null)
+/**
+ * Allowed frontend routes
+ */
+const routes = ['/chat/:uuid/info', '/chat/:uuid', '/community', '/']
+app.use(routes, express.static(publicDir))
 
-server.on('listening', () => {
-  console.log(`listening on http://localhost:${config.port}`)
+app.use(notFound(path.join(publicDir, '/index.html')))
+app.use(error500)
+
+/**
+ * Run
+ */
+app.listen(config.port, () => {
+  console.log(`Listening on http://localhost:${config.port}`)
 })

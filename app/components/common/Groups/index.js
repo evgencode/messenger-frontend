@@ -10,7 +10,7 @@ const Groups = () => {
     <section className="groups">
       <AppBar position="static" className="header groups__header">
         <Toolbar>
-          <div className="title-a">Группы</div>
+          <div className="title-a">Chats</div>
         </Toolbar>
       </AppBar>
       <div className="scrollable">

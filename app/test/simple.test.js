@@ -13,25 +13,25 @@ const ModalWrapper = shallow(
   </Modal>
 )
 
-describe('React Enzyme Tests', () => {
+describe('Modal Enzyme Tests', () => {
   describe('<Modal />', () => {
     it('should render children when passed in', () => {
       expect(ModalWrapper.contains(<span>Hello</span>)).to.equal(true)
     })
   })
-  describe('Others', () => {
-    it('tests', () => {
+  describe('Just component', () => {
+    it('wrapper contains <div>456,50</div>', () => {
       const wrapper = shallow(
         <div>
           <div data-foo="foo" data-bar="bar">
-            Hello
+            456,50
           </div>
         </div>
       )
       expect(
         wrapper.contains(
           <div data-foo="foo" data-bar="bar">
-            Hello
+            456,50
           </div>
         )
       ).to.equal(true)

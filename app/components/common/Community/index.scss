@@ -1,0 +1,23 @@
+@import '~@styles/variables/index.scss';
+
+.community {
+  overflow: hidden;
+  background-color: $white;
+  position: relative;
+  flex: 1 1 100%;
+}
+
+.community__header {
+  @media screen and(min-width: $md) {
+    border-left: 1px solid $header-border-color;
+  }
+}
+
+.community__box {
+  flex: 1;
+  overflow: hidden;
+}
+
+.community__list {
+
+}
