@@ -1,19 +1,24 @@
+import classNames from 'classnames/bind'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import React from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import GroupsList from './GroupsList/container'
-import './index.scss'
+import styles from './index.scss'
+import commonStyles from '@styles/common.scss'
+
+const cs = classNames.bind(styles)
+const cx = classNames.bind(commonStyles)
 
 const Groups = () => {
   return (
-    <section className="groups">
-      <AppBar position="static" className="header groups__header">
+    <section className={cs('root')}>
+      <AppBar position="static">
         <Toolbar>
-          <div className="title-a">Chats</div>
+          <div className={cx('header')}>Chats</div>
         </Toolbar>
       </AppBar>
-      <div className="scrollable">
+      <div className={cx('scrollable')}>
         <Scrollbars>
           <GroupsList />
         </Scrollbars>

@@ -1,12 +1,13 @@
+import classNames from 'classnames/bind'
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { MobileAppRouter } from '@components/common/Routes'
+import styles from './index.scss'
 
-import './index.scss'
+const cs = classNames.bind(styles)
 
 const MobileApp = () => {
   return (
-    <div className="mobile-app">
+    <div className={cs('mobile-app')}>
       <MobileAppRouter />
     </div>
   )

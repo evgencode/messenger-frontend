@@ -25,7 +25,7 @@ const Chat = () => {
         </AppBar>
         <div className="community__box">
           <Scrollbars>
-            <List className="community__list">
+            <ul className="community__list list">
               {[1, 2, 3, 4, 5].map(n => {
                 return (
                   <CommunityUserItem
@@ -38,7 +38,7 @@ const Chat = () => {
                   />
                 )
               })}
-            </List>
+            </ul>
           </Scrollbars>
         </div>
       </div>

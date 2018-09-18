@@ -1,19 +1,19 @@
 @import '~@styles/variables/index.scss';
 
-.intro {
+.root {
   overflow: hidden;
   background-color: $white;
   position: relative;
   flex: 1 1 100%;
 }
 
-.intro__header {
+.header {
   @media screen and(min-width: $md) {
     border-left: 1px solid $header-border-color;
   }
 }
 
-.intro__page {
+.intro {
   flex: 1;
   overflow: hidden;
 }

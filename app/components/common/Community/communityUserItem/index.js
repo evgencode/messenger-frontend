@@ -7,21 +7,28 @@ import './index.scss'
 
 const CommunityUserItem = ({ avatar, languages, name, note, reviewsCount }) => {
   return (
-    <ListItem className="community-item">
-      <Avatar className="community-item__avatar">
+    <li className="community-item list__item">
+      <div className="community-item__avatar">
         <img src={avatar} style={{ width: '100%' }} />
-      </Avatar>
-      <ListItemText
-        primary={name}
-        secondary={note}
-        classes={{
+      </div>
+      <div className="community-item__info">
+        <div className="community-item__header">
+          HHHH
+        </div>
+      </div>
+    </li>
+  )
+}
+/**
+ * <ListItemText
+ primary={name}
+ secondary={note}
+ classes={{
           primary: 'community-item__name',
           secondary: 'community-item__note'
         }}
-      />
-    </ListItem>
-  )
-}
+ />
+ */
 
 CommunityUserItem.propTypes = {
   avatar: PropTypes.node.isRequired,

@@ -1,6 +1,7 @@
 @import '~@styles/variables/index.scss';
+@import '~@styles/extends/index.scss';
 
-.groups {
+.root {
   flex: 1 1 100%;
   @media screen and(min-width: $lg) {
     flex: 0 0 25%;

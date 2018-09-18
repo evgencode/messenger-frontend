@@ -41,7 +41,6 @@
     "mini-css-extract-plugin": "^0.4.1",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.2",
-    "postcss-loader": "^2.1.6",
     "prettier": "^1.13.7",
     "sass-loader": "^7.0.3",
     "sinon": "^6.1.4",

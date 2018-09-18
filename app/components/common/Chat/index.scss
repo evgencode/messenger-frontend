@@ -1,37 +1,24 @@
 @import '~@styles/variables/index.scss';
 
-.chat {
+.root {
   overflow: hidden;
   background-color: $light-gray;
   position: relative;
   flex: 1 1 100%;
 }
 
-.chat__header {
+.header {
   @media screen and(min-width: $md) {
     border-left: 1px solid $header-border-color;
   }
 }
 
-.chat__box {
+.chat-box {
   flex: 1;
   overflow: hidden;
 }
 
-
-.chat__list-item {
-  padding-left: 9%;
-  padding-right: 9%;
-  margin-bottom: 16px;
-  position: relative;
-}
-.chat__list-item::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.chat__msg-new {
+.new-message {
   padding: 20px;
   background-color: #d4d4d4;
 }

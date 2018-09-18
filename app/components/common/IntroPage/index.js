@@ -1,27 +1,27 @@
+import classNames from 'classnames/bind'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './index.scss'
 
-import './index.scss'
+const cs = classNames.bind(styles)
 
-const Chat = () => {
+const IntroPage = () => {
   return (
-    <section className="intro">
-      <div className="column-box column-box_full">
-        <AppBar position="static" className="header intro__header">
+    <section className={cs('root')}>
+      <div className={cs('column-box', 'column-box_full')}>
+        <AppBar position="static" className={cs('header')}>
           <Toolbar>
-            <div className="title-a">Welcome to Chat</div>
+            <div className={cs('title-a')}>Welcome to Chat</div>
           </Toolbar>
         </AppBar>
-        <div className="intro__page">
-          <div className="chat__list list">
-            <Link to="/community">Go to community</Link>
-          </div>
+        <div className={cs('intro')}>
+          <Link to="/community">Go to community</Link>
         </div>
       </div>
     </section>
   )
 }
 
-export default Chat
+export default IntroPage

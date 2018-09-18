@@ -42,7 +42,17 @@ const loaders = [
   },
   {
     test: /\.s?css$/,
-    use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+    loaders: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[folder]---[local]---[hash:base64]'
+        }
+      },
+      'sass-loader'
+    ]
   },
   {
     test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf)$/,

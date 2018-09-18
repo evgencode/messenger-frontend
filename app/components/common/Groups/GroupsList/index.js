@@ -11,7 +11,7 @@ class GroupsList extends Component {
 
   render() {
     return (
-      <List disablePadding className="list groups-list">
+      <List disablePadding>
         {groupsItems.map(({ uuid, link, date, newMessages, name, label }) => (
           <GroupsItem
             key={uuid}

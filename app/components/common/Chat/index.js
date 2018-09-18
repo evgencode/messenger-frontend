@@ -1,34 +1,36 @@
+import classNames from 'classnames/bind'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import React from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import Loader from '@components/common/Loader'
+import styles from './index.scss'
 
-import './index.scss'
+const cs = classNames.bind(styles)
 
 import Message from './Message'
 
 const Chat = () => {
   return (
-    <section className="chat">
+    <section className={cs('root')}>
       {/*<Loader />*/}
-      <div className="column-box column-box_full">
-        <AppBar position="static" className="header chat__header">
+      <div className={cs('column-box', 'column-box_full')}>
+        <AppBar position="static" className={cs('header')}>
           <Toolbar>
-            <div className="title-a">Chat #14589</div>
+            <div className={cs('title-a')}>Chat #14589</div>
           </Toolbar>
         </AppBar>
-        <div className="chat__box">
+        <div className={cs('chat-box')}>
           <Scrollbars>
-            <div className="top-divider" />
-            <div className="chat__list list">
+            <div className={cs('top-divider')} />
+            <div className={cs('chat-list')}>
               {Array.from({ length: 14 }).map((n, i) => {
                 return <Message out={i % 3 === 0} key={i} />
               })}
             </div>
           </Scrollbars>
         </div>
-        <div className="chat__msg-new">NEW Message</div>
+        <div className={cs('new-message')}>NEW Message</div>
       </div>
     </section>
   )
