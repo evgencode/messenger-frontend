@@ -1,0 +1,10 @@
+@import '~@styles/variables/index.scss';
+
+.community-item {
+  border-bottom: 1px solid $gray-400;
+}
+
+.community-item__avatar {
+  width: 60px;
+  height: 60px;
+}
