@@ -16,3 +16,9 @@
   right: 4%;
   top: 6%;
 }
+
+.nowrap-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,37 +1,33 @@
+import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Avatar from '@material-ui/core/Avatar'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import './index.scss'
+import styles from './index.scss'
 
-const CommunityUserItem = ({ avatar, languages, name, note, reviewsCount }) => {
+const cs = classNames.bind(styles)
+
+const CommunityUserItem = ({ avatar, isOnline, languages, name, note, reviewsCount }) => {
+  console.log(languages)
   return (
-    <li className="community-item list__item">
-      <div className="community-item__avatar">
-        <img src={avatar} style={{ width: '100%' }} />
+    <li className={cs('root')}>
+      <div className={cs('avatar')}>
+        <img src={avatar} className={cs('photo')} />
       </div>
-      <div className="community-item__info">
-        <div className="community-item__header">
-          HHHH
+      <div className={cs('info')}>
+        <div className={cs('header')}>
+          <div className={cs('status', isOnline ? 'online' : 'offline')} />
+          <div className={cs('user-name')}>{name}</div>
+          <div className={cs('reviews-count')}>{reviewsCount}</div>
         </div>
+        <div className={cs('note')}>{note}</div>
+        <div className={cs('languages')}>{JSON.stringify(languages)}</div>
       </div>
     </li>
   )
 }
-/**
- * <ListItemText
- primary={name}
- secondary={note}
- classes={{
-          primary: 'community-item__name',
-          secondary: 'community-item__note'
-        }}
- />
- */
 
 CommunityUserItem.propTypes = {
   avatar: PropTypes.node.isRequired,
+  isOnline: PropTypes.bool,
   languages: PropTypes.shape({
     native: PropTypes.string,
     learns: PropTypes.arrayOf(PropTypes.string)

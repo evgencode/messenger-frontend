@@ -1,13 +1,14 @@
-import React from 'react'
+import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import React from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import styles from './index.scss'
 
-import './index.scss'
+const cs = classNames.bind(styles)
 
 const Loader = props => {
   return (
-    <div className={classNames(['loader', { loader_opaque: props.opaque }])} style={props.style}>
+    <div className={cs(['loader', { 'loader-opaque': props.opaque }])} style={props.style}>
       <CircularProgress className={classNames(['loader-spin'])} thickness={4} size={props.size} />
     </div>
   )

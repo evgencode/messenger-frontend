@@ -14,16 +14,16 @@ const Chat = () => {
   return (
     <section className={cs('root')}>
       {/*<Loader />*/}
-      <div className={cs('column-box', 'column-box_full')}>
+      <div className={cs('column-box')}>
         <AppBar position="static" className={cs('header')}>
           <Toolbar>
-            <div className={cs('title-a')}>Chat #14589</div>
+            <div className={cs('title')}>Chat #14589</div>
           </Toolbar>
         </AppBar>
-        <div className={cs('chat-box')}>
+        <div className={cs('scrollable')}>
           <Scrollbars>
             <div className={cs('top-divider')} />
-            <div className={cs('chat-list')}>
+            <div className={cs('message-list')}>
               {Array.from({ length: 14 }).map((n, i) => {
                 return <Message out={i % 3 === 0} key={i} />
               })}

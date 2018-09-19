@@ -1,6 +1,6 @@
 @import '~@styles/variables/index.scss';
 
-.group {
+.root {
   flex: 1 1 100%;
   overflow: hidden;
   position: relative;
@@ -9,26 +9,40 @@
   }
 }
 
-.group__header {
+.column-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
   border-left: 1px solid $header-border-color;
 }
 
-.group-info {
-  flex: 1;
-  overflow: hidden;
+.title {
+  color: $white;
+  font-size: 1.2em
 }
 
-.group__block {
+.scrollable {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.block {
   margin: 12px 3%;
 }
 
-.group__ava {
+.group-ava {
   width: 200px;
   height: 200px;
   margin: 0 auto;
 }
 
-.group__name {
+.group-name {
   margin-top: 20px;
   padding: 10px 0;
   text-align: center;

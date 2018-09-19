@@ -11,11 +11,11 @@
   justify-content: center;
 }
 
-.loader_opaque {
+.loader-opaque {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.loader:not(.loader_opaque) {
+.loader:not(.loader-opaque) {
   pointer-events: none;
 }
 

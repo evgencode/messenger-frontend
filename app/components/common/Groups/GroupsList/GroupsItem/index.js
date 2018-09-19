@@ -1,14 +1,14 @@
+import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
-import classNames from 'classnames/bind'
 import Avatar from '@material-ui/core/Avatar'
 import Badge from '@material-ui/core/Badge'
 import GroupIcon from '@material-ui/icons/Group'
 import IconButton from '@material-ui/core/IconButton'
+import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
+import ListItemText from '@material-ui/core/ListItemText'
 import Typography from '@material-ui/core/Typography'
 import styles from './index.scss'
 
@@ -35,8 +35,8 @@ const GroupsItem = ({ uuid, link, date, newMessages, name, label, onClick }) => 
         primary={name}
         secondary={label}
         classes={{
-          primary: 'nowrap-hidden',
-          secondary: 'nowrap-hidden'
+          primary: cs('nowrap-hidden'),
+          secondary: cs('nowrap-hidden')
         }}
       />
       <ListItemSecondaryAction>

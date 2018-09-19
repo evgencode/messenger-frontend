@@ -10,13 +10,13 @@ const cs = classNames.bind(styles)
 const IntroPage = () => {
   return (
     <section className={cs('root')}>
-      <div className={cs('column-box', 'column-box_full')}>
+      <div className={cs('column-box')}>
         <AppBar position="static" className={cs('header')}>
           <Toolbar>
-            <div className={cs('title-a')}>Welcome to Chat</div>
+            <div className={cs('title')}>Welcome to Chat</div>
           </Toolbar>
         </AppBar>
-        <div className={cs('intro')}>
+        <div className={cs('scrollable')}>
           <Link to="/community">Go to community</Link>
         </div>
       </div>
